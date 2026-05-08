@@ -110,7 +110,7 @@ footer {
         <a href="acceuil.php">Accueil</a>
         <a href="list_pr.php">Produits</a>
         <a href="connexion.php">Connexion</a>
-        <a href="inscription.html">Inscription</a>
+        <a href="inscription.php">Inscription</a>
     </nav>
 </header>
 

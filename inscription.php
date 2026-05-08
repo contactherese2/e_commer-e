@@ -112,8 +112,8 @@ input {
 <header>
     <h2>MonShop</h2>
     <nav>
-        <a href="index.html">Accueil</a>
-        <a href="produit.php">Produits</a>
+        <a href="acceuil.php">Accueil</a>
+        <a href="list_pr.php">Produits</a>
         <a href="connexion.php">Connexion</a>
     </nav>
 </header>

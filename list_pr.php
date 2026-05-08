@@ -118,8 +118,8 @@ footer {
     <nav>
         <a href="acceuil.php">Accueil</a>
         <a href="panier.php">Panier</a>
-        <a href="connexion.html">Connexion</a>
-        <a href="inscription.html">Inscription</a>
+        <a href="connexion.php">Connexion</a>
+        <a href="inscription.php">Inscription</a>
     </nav>
 </header>
 
@@ -135,6 +135,9 @@ footer {
         $produit = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
 
+
+
+        
     ?>  
       
 <div class="card">
@@ -145,10 +148,13 @@ footer {
         <p><?=  $produits['description_p']  ?></p>
         <p class="prix"><?=  $produits['prix_p']  ?></p>
         <p class="stock"><?=  $produits['stock_p']  ?></p>
-        <a href="trai_panier2.php?id=<?=  $produits['id_p']  ?>" class="a">Ajouter au panier</a>
+        <a href="panier.php?ajouter=<?=$produits['id_p']  ?>" class="a">
+            Ajouter au panier</a>
     </div>
     <?php endforeach; ?>
 </div>
+
+
  
 
 <!-- FOOTER -->
