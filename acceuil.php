@@ -81,17 +81,30 @@
         }
 
         .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+             width: 100%;
         }
 
-        .card {
-            background: white;
+        .cards {
+            background: yellow;
+               display : flex;
+               flex-wrap: wrap;
+               gap : 20px;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             text-align: center;
+            width: 100%;
+            
+        }
+        .card {
+            background: #fff;
+             
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          
+           
+            
         }
 
         .card img {
@@ -210,79 +223,85 @@
         <h2>Bienvenue sur TheraShop 🛒</h2>
         <p>Découvrez les meilleurs produits au meilleur prix</p>
     </section>
-    <!-- PRODUITS -->
+    <!-- PRODUITS-->
     <section class="produits">
-        <h2>Produits disponibles</h2>
+        <h2>Produits Dsponible</h2>
 
         <div class="grid">
 
-            <div class="card">
-                <img src="https://via.placeholder.com/300" alt="Produit 1">
-                <h3>Produit 1</h3>
-                <p>Prix : 10€</p>
-            </div>
-
-            <div class="card">
-                <img src="https://via.placeholder.com/300" alt="Produit 2">
-                <h3>Produit 2</h3>
-                <p>Prix : 20€</p>
-            </div>
-
-            <div class="card">
-                <img src="https://via.placeholder.com/300" alt="Produit 3">
-                <h3>Produit 3</h3>
-                <p>Prix : 30€</p>
-            </div>
-
+           
+           <!-- <div class="container">-->
+                <?php
+                 echo "<div class='cards'>";
+                    require_once ("con_db.php");
+                    $sql = "SELECT * FROM produits,categories WHERE produits.id_cat = categories.id_cat ";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute();
+                    
+                        while ($produit = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                            echo '<div class="card" data-category="' . htmlspecialchars($produit['nom_p'], ENT_QUOTES, 'UTF-8') . '">';
+                            echo '<img src="image/' . htmlspecialchars($produit['image'], ENT_QUOTES, 'UTF-8') . '">';
+                            echo '<div class="card-content">';
+                            echo '<h4>' . htmlspecialchars($produit['nom_p'], ENT_QUOTES, 'UTF-8') . '</h4>';
+                            echo '<div class="price">' . htmlspecialchars($produit['prix_p'], ENT_QUOTES, 'UTF-8') . '</div>';
+                            echo '<div class="stock ' . ($produit['stock_p'] > 0 ? 'ok' : 'out') . '">Stock : ' . htmlspecialchars($produit['stock_p'], ENT_QUOTES, 'UTF-8') . '</div>';
+                            echo '<p>' . htmlspecialchars($produit['description_p'], ENT_QUOTES, 'UTF-8') . '</p>';
+                            echo '<a href="panier2.php?ajouter="'.$produit['id_p'] .'" class="btn">Ajouter au panier</a>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    echo "</div>";  
+                ?>
+           
         </div>
+       
+        
+                
     </section>
     <!--A propos-->
     <section>
-     <div class="containers">
-        <div class="titre">
-             <h3>À propos</h3>
-        </div>
-           
+        <div class="containers">
             <p>
                 TheraShop est une plateforme e-commerce conçue pour offrir une 
                 expérience d'achat simple, rapide et sécurisée. Nous mettons 
                 à votre disposition une large gamme de produits de qualité 
                 adaptés à vos besoins quotidiens.
-           
+        
                 Notre mission est de faciliter vos achats en ligne tout en 
                 garantissant satisfaction et confiance.
-      
+    
                 Nous proposons la vente de produits variés avec un système 
                 de commande simple et efficace. Vous pouvez parcourir les 
                 articles, ajouter vos choix au panier et finaliser votre 
                 commande en quelques clics.
-           
+        
                 Nous assurons également un suivi des commandes et une 
                 assistance client en cas de besoin.
             </p>
-          
+        
         </div>
     </section>
-    
+            
+    <div>
+        <!-- FOOTER -->
+        <form>
+            <div class="footer">
+            <div class="container">
 
-    <!-- FOOTER -->
-   <form>
-    <div class="footer">
-    <div class="container">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email : contact@monshop.com</p>
+                    <p>Téléphone : +228 90 00 00 00</p>
+                    <p>Adresse : Lomé, Togo</p>
+                </div>
 
-        <div class="footer-section">
-            <h3>Contact</h3>
-            <p>Email : contact@monshop.com</p>
-            <p>Téléphone : +228 90 00 00 00</p>
-            <p>Adresse : Lomé, Togo</p>
-        </div>
+            </div>
 
+            <div class="footer-bottom">
+                <p>© 2026 TheraShop - Tous droits réservés</p>
+            </div>
+        </form>
     </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 TheraShop - Tous droits réservés</p>
-    </div>
-</div>
-   </form>
-</body>
-</html>
+   
+    </body>
+    </html>

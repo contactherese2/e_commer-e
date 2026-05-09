@@ -422,7 +422,7 @@ input[type=number]{
 
 <div class="container">
 
-<h1>🛒 MON Panier</h1>
+<h1>🛒 Mon Panier</h1>
 <?php
 
 if($message != ""){
@@ -592,7 +592,7 @@ $total += $sous_total;
 <div class="total">
 
     TOTAL :
-    <?php echo $total; ?> €
+    <?php echo $total; ?> F CFA
 
 </div>
 
@@ -610,7 +610,7 @@ $total += $sous_total;
 
     </button>
 
-<br><br><br><br>
+<br><br><br>
 
  <a class="btn btn-valider" href="list_pr.php">
 
