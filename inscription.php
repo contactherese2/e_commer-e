@@ -110,7 +110,7 @@ input {
 
 <!-- HEADER -->
 <header>
-    <h2>MonShop</h2>
+    <h2>ESAshop</h2>
     <nav>
         <a href="acceuil.php">Accueil</a>
         <a href="list_pr.php">Produits</a>

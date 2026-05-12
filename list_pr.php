@@ -135,10 +135,10 @@ footer {
 
 <!-- HEADER -->
 <header>
-    <h2>TheraShop</h2>
+    <h2>ESAshop</h2>
     <nav>
         <a href="acceuil.php">Accueil</a>
-        <a href="panier2.php">Panier</a>
+        <a href="panier.php">Panier</a>
         <a href="connexion.php">Connexion</a>
         <a href="inscription.php">Inscription</a>
     </nav>
@@ -194,7 +194,7 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-    <p>© 2026 MonShop - Tous droits réservés</p>
+    <p>© 2026 ESAshop - Tous droits réservés</p>
 </footer>
 
 </body>

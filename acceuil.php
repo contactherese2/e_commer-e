@@ -203,29 +203,32 @@
     
 }
 
+
+
     </style>
 </head>
 <body>
 
     <!-- HEADER -->
     <header>
-        <h1>TheraShop</h1>
+        <h1>ESAshop</h1>
         <nav>
             <a href="#">Accueil</a>
             <a href="list_pr.php">Produits</a>
             <a href="connexion.php">Connexion</a>
             <a href="inscription.php">Inscription</a>
+            <a href="deconnexion.php">Déconnexion</a>
         </nav>
     </header>
 
     <!-- SECTION BIENVENUE -->
     <section class="hero">
-        <h2>Bienvenue sur TheraShop 🛒</h2>
+        <h2>Bienvenue sur ESAshop 🛒</h2>
         <p>Découvrez les meilleurs produits au meilleur prix</p>
     </section>
     <!-- PRODUITS-->
     <section class="produits">
-        <h2>Produits Dsponible</h2>
+        <h2>Produits Disponible</h2>
 
         <div class="grid">
 
@@ -246,7 +249,7 @@
                             echo '<div class="price">' . htmlspecialchars($produit['prix_p'], ENT_QUOTES, 'UTF-8') . '</div>';
                             echo '<div class="stock ' . ($produit['stock_p'] > 0 ? 'ok' : 'out') . '">Stock : ' . htmlspecialchars($produit['stock_p'], ENT_QUOTES, 'UTF-8') . '</div>';
                             echo '<p>' . htmlspecialchars($produit['description_p'], ENT_QUOTES, 'UTF-8') . '</p>';
-                            echo '<a href="panier2.php?ajouter="'.$produit['id_p'] .'" class="btn">Ajouter au panier</a>';
+                            echo '<a href="panier.php?ajouter="'.$produit['id_p'] .'" class="btn">Ajouter au panier</a>';
                             echo '</div>';
                             echo '</div>';
                         }

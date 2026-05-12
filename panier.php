@@ -15,7 +15,7 @@ UTILISATEUR CONNECTÉ
 ========================================
 */
 
-$id_u = 1;
+$id_u = $_SESSION['id_user'] ?? 1;
 
 
 /*
@@ -599,7 +599,11 @@ $total += $sous_total;
 
 <!-- VALIDER -->
 
-<form method="POST">
+<form method="POST" action="Commande_Resume.php">
+
+    <h3>Adresse de livraison</h3>
+    <input type="text" name="adresse_cmd" required style="width:100%;padding:10px" placeholder="Adresse de livraison">
+    <input type="hidden" name="total_cmd" value="<?php echo $total; ?>">
 
     <button
     class="btn btn-valider"
