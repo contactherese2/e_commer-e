@@ -287,12 +287,12 @@ TABLEAU PANIER
 
     background:white;
 
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    box-shadow:0 0 10px rgba(5, 121, 46, 0.1);
 }
 
 .table-panier th{
 
-    background:#007bff;
+    background:#19B419;
 
     color:white;
 
@@ -368,7 +368,7 @@ TOTAL
 
     margin-top:20px;
 
-    background:black;
+    background:#4B814B;
 
     color:white;
 
@@ -557,7 +557,7 @@ $total += $sous_total;
 
     <td>
 
-        <?php echo $sous_total; ?> €
+        <?php echo $sous_total; ?> CF CFA
 
     </td>
 

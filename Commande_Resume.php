@@ -151,7 +151,7 @@ $conn->query("DELETE FROM panier WHERE id_u = '$id_user'");
         }
 
         .summary-card {
-            background: rgba(255, 255, 255, 0.03);
+           background:#4B814B;
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 22px;
             padding: 22px;
@@ -279,7 +279,7 @@ $conn->query("DELETE FROM panier WHERE id_u = '$id_user'");
                     </div>
                     <div class="summary-card">
                         <strong>Montant total</strong>
-                        <span><?php echo number_format($total, 2, ',', ' '); ?> €</span>
+                        <span><?php echo number_format($total, 2, ',', ' '); ?> F CFA</span>
                     </div>
                     <div class="summary-card">
                         <strong>Adresse de livraison</strong>
@@ -312,7 +312,7 @@ $conn->query("DELETE FROM panier WHERE id_u = '$id_user'");
                             <?php endforeach; ?>
                             <tr class="total-row">
                                 <td colspan="3">Total</td>
-                                <td><?php echo number_format($total, 2, ',', ' '); ?> €</td>
+                                <td><?php echo number_format($total, 2, ',', ' '); ?> F CFA</td>
                             </tr>
                         </tbody>
                     </table>
